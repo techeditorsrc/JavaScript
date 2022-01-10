@@ -19,3 +19,8 @@ function init_console(id){
 con=function(text,append){
   html(c_id,text,append); 
 }
+
+//   var me = this;
+// this.interval = setInterval(function () {
+//     me.updateCountdown();
+// }, 1000);
