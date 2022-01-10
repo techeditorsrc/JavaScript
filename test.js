@@ -17,10 +17,23 @@ function init_console(id){
   c_id=get(id); 
 }
 con=function(text,append){
-  html(c_id,text,append); 
+  if(id){
+    html(c_id,text,append);
+  }
 }
 
-//   var me = this;
-// this.interval = setInterval(function () {
-//     me.updateCountdown();
-// }, 1000);
+function timerobj(){
+  this.c=0;
+  this.x="";
+  var me=this;
+  this.update=function(){
+    con(me.c);
+    this.c+=1;
+  }
+  this.set=function(){
+    this.x=setInterval(function(){
+      me.update();
+    },123);
+  }
+}
+
