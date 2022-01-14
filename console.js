@@ -1,3 +1,5 @@
+//Author: Anton Nedilko
+
 // function isDictionary(x){
 //   return typeof x === "object" && !Array.isArray(x);
 // }
