@@ -53,14 +53,14 @@ function timer(){
     this.index=0;
     this.istimer=true;
     this.timer=setInterval(function(){
-      if(this.istimer){
+      if(me.istimer){
         me.update(me.index);
         me.index+=1;
         if(me.index>=65536){
           me.index=0; 
         }
       }
-    },this.delay);
+    },me.delay);
   }
   
   this.pause=function(){
@@ -83,5 +83,4 @@ function timer(){
     }
   }
   
-}
-
+}  
