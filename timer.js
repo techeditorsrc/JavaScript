@@ -32,7 +32,7 @@ function timer(){
     return result;
   }
   
-  this.delete_register(id){
+  this.delete_register=function(id){
     var r=this.find_register(id);
     while(r!=-1){
       this.data.splice(r,1);
