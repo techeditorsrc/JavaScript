@@ -1,3 +1,4 @@
+//Author: Anton Nedilko
 function vector3d(){
   this.vector=function(){
     var x=arguments,l=arguments.length;
@@ -13,8 +14,12 @@ function vector3d(){
       this.v=[x[0],x[1],x[2],x[3]];
     }
   }
-  this.v=[];
-  this.vector(arguments);
+  this.v=[0,0,0,0];
+  if(arguments.length==1){
+    this.vector(arguments[0]);
+  }else if(arguments.length==4){
+    this.vector([arguments[0],arguments[1],arguments[2],arguments[3]])
+  }
   this.add=function(a,b){
     var x=[0,0,0,0],y=[0,0,0,0];
     if(a){
