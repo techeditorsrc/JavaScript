@@ -20,32 +20,31 @@
     }else if(arguments.length==4){
       this.vector([arguments[0],arguments[1],arguments[2],arguments[3]])
     }
+  this.copy=function(){
+    return new vector3d(this);
+  }  
   this.add=function(a){
-    for(var j=0;j<3;j++){
-      this.v[j]+=a.v[j];
-    }
-    this.v[3]=a.v[3];
+    this.v[0]+=a.v[0];
+    this.v[1]+=a.v[1];
+    this.v[2]+=a.v[2];
     return this;
   }
   this.sub=function(a){
-    for(var j=0;j<3;j++){
-      this.v[j]-=a.v[j];
-    }
-    this.v[3]=a.v[3];
+    this.v[0]-=a.v[0];
+    this.v[1]-=a.v[1];
+    this.v[2]-=a.v[2];
     return this;      
   }
   this.mul=function(a){
-    for(var j=0;j<3;j++){
-      this.v[j]*=a.v[j];
-    }
-    this.v[3]=a.v[3];
+    this.v[0]*=a.v[0];
+    this.v[1]*=a.v[1];
+    this.v[2]*=a.v[2];
     return this;      
   }    
    this.scale=function(a){
-    for(var j=0;j<3;j++){
-      this.v[j]*=a;
-    }
-    this.v[3]=a.v[3];
+    this.v[0]*=a;
+    this.v[1]*=a;
+    this.v[2]*=a;
     return this;      
   }
    this.len=function(){
