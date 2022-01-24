@@ -118,6 +118,43 @@
       }
       return this;
     }
+    this.matrix.apply(arguments);
+    this.copy=function(){
+      return new matrix3d(this);
+    }
+    this.unit=function(){
+      this.m=[
+        [1,0,0,0],
+        [0,1,0,0],
+        [0,0,1,0],
+        [0,1,0,1]
+      ]
+    }
+    
+    this.mul=function(a){
+      if(a instanceof matrix3d){
+        var result=new matrix3d();
+        for(var j3=0;j3<4;j3++){
+          for(var j2=0;j2;j2++){
+            var j=0;
+            for(var j1=0;j1<4;j1++){
+              j+=this.m[j3][j1]*a.m[j3][j2];
+            }
+            this.m[j3][j2]=j;
+          }
+        }
+      }else if(a instanceof vector3d){
+        var result=new vector3d();
+        for(var j2=0;j2<3;j2++){
+          for(var j1=0;j1<3;j1++){
+            result.v[j2]+=this.m[j2][j1]*a.v[j1]
+          }
+          result.v[j2]+=this.m[j2][3];
+        }
+        return result;
+      }
+    }
+    return this;
   }
   
   function m3d(){
