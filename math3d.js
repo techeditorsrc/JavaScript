@@ -1,7 +1,7 @@
 //Author: Anton Nedilko
   function vector3d(){
     this.vector=function(){
-      var x=arguments,l=arguments.length;
+      var x=arguments,l=x.length;
       if(l==0){
         this.v=[0,0,0,0]
       }else if(l==1){
@@ -86,5 +86,44 @@
       return new vector3d(a);
     }else{
       return new vector3d();
+    }
+  }
+  
+  function matrix3d(){
+    this.m=[[],[],[],[]];
+    this.matrix=function(){
+      var x=arguments,l=x.length;
+      if(l==0){
+        this.m=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];
+      }else if(l==1){
+        if(Array.isArray(x[0])){
+          for(var j2=0;j2<4;j2++){
+            for(var j1=0;j1<4;j1++){
+              this.m[j2][j1]=x[0][j2][j1];
+            }
+          }
+        }else{
+           for(var j2=0;j2<4;j2++){
+            for(var j1=0;j1<4;j1++){
+              this.m[j2][j1]=x[0].m[j2][j1];
+            }
+          }         
+        }
+      }else if(l==4){
+        for(var j2=0;j2<4;j2++){
+          for(var j1=0;j1<4;j1++){
+            this.m[j2][j1]=x[j2][j1];
+          }
+        }       
+      }
+      return this;
+    }
+  }
+  
+  function m3d(){
+    if(a){
+      return new matrix3d(a);
+    }else{
+      return new matrix3d();
     }
   }
