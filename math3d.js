@@ -60,8 +60,7 @@ function vector3d(){
     return this;
   }
   this.dot=function(a){
-    this.v[0]*a.v[0]+this.v[1]*a.v[1]+this.v[2]*a.v[2];
-    return this;
+    return this.v[0]*a.v[0]+this.v[1]*a.v[1]+this.v[2]*a.v[2];;
   }
   this.cross=function(a){
     this.v[0]=this.v[1]*a.v[2]-this.v[2]*a.v[1];
