@@ -1,4 +1,5 @@
 //Author: Anton Nedilko
+//JavaScript 3D, beta
   function vector3d(){
     this.vector=function(){
       var x=arguments,l=x.length;
