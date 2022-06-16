@@ -20,20 +20,6 @@
       con.innerHTML+=x;
     }
   }
-  function event(obj,e,f,option_list){
-    if(typeof f=='function'){
-      var x=[];
-      if(option_list){
-        x=option_list;
-      }
-      obj.addEventListener.apply([e,f].concate(x));
-    }else{
-      if(!f){
-        obj.removeEventListener(e,f);
-      }
-    }
-  }
-
   var keys={},mouse={
     'button':false,
     'x':0,
